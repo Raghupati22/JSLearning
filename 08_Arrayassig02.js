@@ -82,7 +82,7 @@ let is23Available=arrayNumbers.includes(23);
 console.log(`Is 23 available : ${is23Available}`);
 
 
-arrayNumbers.splice(3,1,55,66);
+arrayNumbers.splice(3,0,55,66);
 console.log(`Array Element is : ${arrayNumbers}`);
 
 arrayNumbers.splice(4,3);
