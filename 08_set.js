@@ -45,3 +45,4 @@ arrayNew=[...new Set(arrayNew)];
 console.log(arrayNew);
 //console.log(newSet);
 
+let arrayNew1=[4,5,4,5,8,5,7,8,9,7,8];
