@@ -46,5 +46,5 @@ console.log(`Result : ${result}`); //"8"
 console.log(`Why result is ${result} because their is implicit conversion from string value 4 to number`);
 
 var result='4'/ 2;
-console.log(`Result : ${result}`);//"3n2ull"
+console.log(`Result : ${result}`);//"2"
 console.log(`Why result is ${result} because their is implicit conversion from string value 4 to number`);
