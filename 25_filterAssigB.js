@@ -29,7 +29,7 @@ const arrayOfStudent=[studentJenny,studentStew,studentElon,studentSatya,studentS
 const newStudentList=arrayOfStudent.filter((Student)=>{
 return Student.emailId.length>13;
 });
-console.table(newStudentList);
+//console.table(newStudentList);
 
 class Employee{
     constructor(emp_id,emp_name,emp_dept,emp_salary,emp_company){
@@ -52,17 +52,49 @@ const emp_mahi=new Employee(99,"Mahesh","HR",85000,"Infy");
 const arrayEmployees=[emp_anil,emp_radha,emp_rishi,emp_sonali,emp_monika,emp_viny,emp_mahi];
 
 const tcsEmployee=arrayEmployees.filter((Employee)=>{
-    return Employee.emp_company=="TCS";
+    return Employee.emp_company==="TCS";
     });
-    console.table(tcsEmployee);
+    //console.log(tcsEmployee);
+    console.log('*************************************************************************');
+    console.log('======Find the TCS employee name and company Name=======================');
+    for (const employee of tcsEmployee) {
+        console.log(`Comapany Name: ${employee.emp_company}, Employee Name: ${employee.emp_name}`);
+    }
 
-    const avrageSalWipro=arrayEmployees.filter((Employee)=>{
-        return Employee.emp_salary>50000 && Employee.emp_company=="Wipro";
+    console.log("==========Find the TCS employee and get list of employee names only =====");
+    const employeeTCS=arrayEmployees.filter((Employee)=>{
+        return Employee.emp_company==="TCS";
         });
-        console.table(avrageSalWipro);
+
+        const employeeTcsname=employeeTCS.map((employee)=>{
+         return employee.emp_name;
+        });
+
+        //console.log(employeeTcsname);
+      
+        arrayEmployees.filter(Employee=> Employee.emp_company==="TCS")
+        .map(employee=>employee.emp_name)
+        .forEach(empName=>console.log(empName))
+
+
+        console.log('====Find the average salary of employee from company Wipro=============== ');
+    const avrageSalWipro=arrayEmployees.filter((Employee)=>{
+        return Employee.emp_company==="Wipro";
+        });
+        let salarySum=0;
+        for (const employee of avrageSalWipro) {
+           salarySum =salarySum+employee.emp_salary;
+        }
+        console.log(`Average salary from Wipro : ${salarySum/avrageSalWipro.length}`);
+
+        console.log('====Find the average salary of employee from company Wipro or Infosys=============== ');
 
         const avrageSalWiproOrInfy=arrayEmployees.filter((Employee)=>{
-            return Employee.emp_salary>50000 && Employee.emp_company=="Wipro" || Employee.emp_company=="Infy";
+            return Employee.emp_company=="Wipro" || Employee.emp_company=="Infy";
             });
-            console.table(avrageSalWiproOrInfy);
-
+            
+            let salarySums=0;
+            for (const employee of avrageSalWiproOrInfy) {
+                salarySums =salarySums+employee.emp_salary;
+            }
+            console.log(`Average salary from Wipro and Infosys: ${salarySums/avrageSalWiproOrInfy.length}`);
