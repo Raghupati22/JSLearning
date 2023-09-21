@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise time!</title>
+</head>
+<body>
+    <main>
+        <div id="overview">
+          <h1 class="header">HTML &  JavaScript are crucial technology</h1>
+          <p>The web would not work without them...</p>
+        </div>
+        <div id="advantages">
+          <ul>
+            <li class="adv">Flexible</li>
+            <li class="adv">Available</li>
+            <li class="adv">Magical</li>
+          </ul>
+        </div>
+    </main>
+    <script>
+        console.log('=============MainHeading========================');
+        const mainHeading=document.getElementsByClassName('header');
+        console.log(mainHeading[0].innerHTML);
+        console.log('=============SecondAdvantage========================');
+        const secondAdvantage=document.getElementsByClassName('adv')
+        console.log(secondAdvantage[1].innerHTML);   
+        console.log('=============advDiv========================');
+        const advDiv=document.querySelectorAll('.adv');
+      for (let index = 0; index < advDiv.length; index++) {
+    const element = advDiv[index].innerHTML;
+    console.log(element);
+    
+}
+    </script>
+</body>
+</html>
